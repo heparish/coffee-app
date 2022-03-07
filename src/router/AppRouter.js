@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from '../components/Header';
 import AddCoffee from '../components/AddCoffee';
 import CoffeeList from '../components/CoffeeList';
@@ -10,10 +10,10 @@ const AppRouter = () => {
       <div>
         <Header />
         <div className="main-content">
-          <Switch>
-            <Route component={CoffeeList} path="/" exact={true} />
-            <Route component={AddCoffee} path="/add" />
-          </Switch>
+          <Routes>
+            <Route path="/" element={<CoffeeList />} />
+            <Route path="/add" element={<AddCoffee />} />
+          </Routes>
         </div>
       </div>
     </BrowserRouter>
