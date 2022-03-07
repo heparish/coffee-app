@@ -1,13 +1,11 @@
 import React, {useEffect} from 'react';
 import {useState} from "react";
 
-function CoffeeList() {
+    
+function CoffeeList () {
 
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    // const [images, setImages] = useState([]);
-    
-const CoffeeList = () => {
 
   useEffect(() => {
     fetch('http://127.0.0.1:5000/') 
@@ -33,5 +31,5 @@ if (error) {
     );
 }
 }
-    };
+    
 export default CoffeeList;
