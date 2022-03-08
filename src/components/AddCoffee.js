@@ -1,9 +1,10 @@
 import React from 'react';
 import CoffeeForm from './CoffeeForm';
 
-const AddCoffee = () => {
+const AddCoffee = ({ history, coffees, setCoffee}) => {
   const handleOnSubmit = (coffee) => {
-    console.log(coffee);
+    setCoffee([coffee, ...coffees]);
+    history.push('/');
   };
 
   return (

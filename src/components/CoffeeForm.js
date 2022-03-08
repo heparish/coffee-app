@@ -42,32 +42,32 @@ const CoffeeForm = (props) => {
     setErrorMsg(errorMsg);
   };
 
-//   const handleInputChange = (event) => {
-//     const { name, value } = event.target;
-//     switch (name) {
-//       case 'region':
-//         if (value === '' || parseInt(value) === +value) {
-//           setCoffee((prevState) => ({
-//             ...prevState,
-//             [name]: value
-//           }));
-//         }
-//         break;
-//       case 'roastery':
-//         if (value === '' || value.match(/^\d{1,}(\.\d{0,2})?$/)) {
-//           setCoffee((prevState) => ({
-//             ...prevState,
-//             [name]: value
-//           }));
-//         }
-//         break;
-//       default:
-//         setCoffee((prevState) => ({
-//           ...prevState,
-//           [name]: value
-//         }));
-//     }
-//   };
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    switch (name) {
+      case 'region':
+        if (value === '' || parseInt(value) === +value) {
+          setCoffee((prevState) => ({
+            ...prevState,
+            [name]: value
+          }));
+        }
+        break;
+      case 'roastery':
+        if (value === '' || value.match(/^\d{1,}(\.\d{0,2})?$/)) {
+          setCoffee((prevState) => ({
+            ...prevState,
+            [name]: value
+          }));
+        }
+        break;
+      default:
+        setCoffee((prevState) => ({
+          ...prevState,
+          [name]: value
+        }));
+    }
+  };
 
   return (
     <div className="main-form">
@@ -81,7 +81,7 @@ const CoffeeForm = (props) => {
             name="Coffeename"
             value={coffeename}
             placeholder="Enter name of coffee"
-            // onChange={handleInputChange}
+            onChange={handleInputChange}
           />
         </Form.Group>
         <Form.Group controlId="brand">
@@ -92,7 +92,7 @@ const CoffeeForm = (props) => {
             name="brand"
             value={brand}
             placeholder="Enter name of brand"
-            // onChange={handleInputChange}
+            onChange={handleInputChange}
           />
         </Form.Group>
         <Form.Group controlId="region">
@@ -103,7 +103,7 @@ const CoffeeForm = (props) => {
             name="region"
             value={region}
             placeholder="Enter available region"
-            // onChange={handleInputChange}
+            onChange={handleInputChange}
           />
         </Form.Group>
         <Form.Group controlId="roastery">
@@ -114,7 +114,7 @@ const CoffeeForm = (props) => {
             name="roastery"
             value={roastery}
             placeholder="Enter roastery of coffee"
-            // onChange={handleInputChange}
+            onChange={handleInputChange}
           />
         </Form.Group>
         <Form.Group controlId="flavournotes">
@@ -125,7 +125,7 @@ const CoffeeForm = (props) => {
             name="flavournotes"
             value={flavournotes}
             placeholder="Enter available region"
-            // onChange={handleInputChange}
+            onChange={handleInputChange}
           />
         </Form.Group>
         <Button variant="primary" type="submit" className="submit-btn">

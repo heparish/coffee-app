@@ -7,10 +7,10 @@ const Header = () => {
       <h1>Coffee App</h1>
       <hr />
       <div className="links">
-        <NavLink to="/" className="link" className="active" >
+        <NavLink to="/" className="link"  >
           Coffee List
         </NavLink>
-        <NavLink to="/add" className="link" className="active">
+        <NavLink to="/add" className="link" >
           Add Coffee
         </NavLink>
       </div>
