@@ -1,13 +1,14 @@
 import React, {useContext} from 'react';
 import CoffeeForm from './CoffeeForm';
 import CoffeeContext from '../context/CoffeeContext';
+import { Navigate } from "react-router-dom";
 
-const AddCoffee = ({ history }) => {
+const AddCoffee = ({  }) => {
   const { coffees, setCoffee } = useContext(CoffeeContext);
-
   const handleOnSubmit = (coffee) => {
     setCoffee([coffee, ...coffees]);
-    history.push('/');
+    // navigate.push('/');
+    <Navigate to="/" />
   };
 
   return (

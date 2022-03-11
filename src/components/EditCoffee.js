@@ -5,7 +5,7 @@ import CoffeeContext from '../context/CoffeeContext';
 import { useNavigate } from "react-router-dom";
 
 
-function EditCoffee({ past }) {
+function EditCoffee({ history }) {
 
     const { coffees, setCoffees } = useContext(CoffeeContext);
     const { id } = useParams();
@@ -14,7 +14,7 @@ function EditCoffee({ past }) {
     const handleOnSubmit = (coffee) => {
         const filteredCoffees = coffees.filter((coffee) => coffee.id !== id);
         setCoffees([coffee, ...filteredCoffees]);
-        past.navigate('/');
+        history.navigate('/');
     };
 
     return (

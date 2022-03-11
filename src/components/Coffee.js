@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const Coffee = ({
   id,
@@ -9,6 +10,7 @@ const Coffee = ({
 //   date,
   handleRemoveCoffee
 }) => {
+    const navigate = useNavigate();
   return (
     <Card style={{ width: '18rem' }} className="cofee">
       <Card.Body>
@@ -19,7 +21,7 @@ const Coffee = ({
           <div>flavor Notes: {flavor_notes} </div>
           {/* <div>Date: {new Date(date).toDateString()}</div> */}
         </div>
-        <Button variant="primary">Edit</Button>{' '}
+        <Button variant="primary" onClick={() => navigate.push(`/edit/${id}`)}>Edit</Button>{' '}
         <Button variant="danger" onClick={() => handleRemoveCoffee(id)}>
           Delete
         </Button>
