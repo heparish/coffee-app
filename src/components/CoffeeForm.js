@@ -3,21 +3,22 @@ import { Form, Button } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
 
 const CoffeeForm = (props) => {
-  const [Coffee, ] = useState({
+  const [Coffee, setCoffee ] = useState({
     coffeename: props.coffee ? props.coffee.coffeename : '',
-    brand: props.coffee ? props.coffee.brand : '',
-    region: props.coffee ? props.coffee.region : '',
-    roastery: props.coffee ? props.coffee.roastery : '',
-    flavournotes: props.coffee ? props.coffee.flavournotes : '',
+    rating: props.coffee ? props.coffee.rating : '',
+    // brand: props.coffee ? props.coffee.brand : '',
+    // rating: props.coffee ? props.coffee.rating : '',
+    // roastery: props.coffee ? props.coffee.roastery : '',
+    flavornotes: props.coffee ? props.coffee.flavornotes : '',
     date: props.coffee ? props.coffee.date : ''
   });
 
   const [errorMsg, setErrorMsg] = useState('');
-  const { coffeename, brand, roastery, region, flavournotes } = Coffee;
+  const { coffee_name, rating, flavor_notes } = Coffee;
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    const values = [coffeename, brand, roastery, region, flavournotes];
+    const values = [coffee_name, rating, flavor_notes];
     let errorMsg = '';
 
     const allFieldsFilled = values.every((field) => {
@@ -28,11 +29,9 @@ const CoffeeForm = (props) => {
     if (allFieldsFilled) {
       const Coffee = {
         id: uuidv4(),
-        coffeename,
-        brand,
-        roastery,
-        region,
-        flavournotes,
+        coffee_name,
+        rating,
+        flavor_notes,
         date: new Date()
       };
       props.handleOnSubmit(Coffee);
@@ -45,7 +44,7 @@ const CoffeeForm = (props) => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     switch (name) {
-      case 'region':
+      case 'rating':
         if (value === '' || parseInt(value) === +value) {
           setCoffee((prevState) => ({
             ...prevState,
@@ -78,13 +77,13 @@ const CoffeeForm = (props) => {
           <Form.Control
             className="input-control"
             type="text"
-            name="Coffeename"
-            value={coffeename}
+            name="coffeename"
+            value={coffee_name}
             placeholder="Enter name of coffee"
             onChange={handleInputChange}
           />
         </Form.Group>
-        <Form.Group controlId="brand">
+        {/* <Form.Group controlId="brand">
           <Form.Label>Coffee brand</Form.Label>
           <Form.Control
             className="input-control"
@@ -94,19 +93,19 @@ const CoffeeForm = (props) => {
             placeholder="Enter name of brand"
             onChange={handleInputChange}
           />
-        </Form.Group>
-        <Form.Group controlId="region">
-          <Form.Label>Region</Form.Label>
+        </Form.Group> */}
+        <Form.Group controlId="rating">
+          <Form.Label>Rating</Form.Label>
           <Form.Control
             className="input-control"
             type="number"
-            name="region"
-            value={region}
-            placeholder="Enter available region"
+            name="rating"
+            value={rating}
+            placeholder="Enter rating"
             onChange={handleInputChange}
           />
         </Form.Group>
-        <Form.Group controlId="roastery">
+        {/* <Form.Group controlId="roastery">
           <Form.Label>Coffee roastery</Form.Label>
           <Form.Control
             className="input-control"
@@ -116,15 +115,15 @@ const CoffeeForm = (props) => {
             placeholder="Enter roastery of coffee"
             onChange={handleInputChange}
           />
-        </Form.Group>
-        <Form.Group controlId="flavournotes">
-          <Form.Label>Flavour Notes</Form.Label>
+        </Form.Group> */}
+        <Form.Group controlId="flavornotes">
+          <Form.Label>flavor Notes</Form.Label>
           <Form.Control
             className="input-control"
-            type="number"
-            name="flavournotes"
-            value={flavournotes}
-            placeholder="Enter available region"
+            type="text"
+            name="flavornotes"
+            value={flavor_notes}
+            placeholder="Enter available rating"
             onChange={handleInputChange}
           />
         </Form.Group>
