@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 const Coffee = ({
   id,
-  coffeename,
+  coffee_name,
   rating,
-  flavornotes,
+  flavor_notes,
 //   date,
   handleRemoveCoffee
 }) => {
@@ -14,11 +14,11 @@ const Coffee = ({
   return (
     <Card style={{ width: '18rem' }} className="cofee">
       <Card.Body>
-        <Card.Title className="coffee-title">{coffeename}</Card.Title>
+        <Card.Title className="coffee-title">{coffee_name}</Card.Title>
         <div className="coffee-details">
-          <div>Name: {coffeename}</div>
+          <div>Name: {coffee_name}</div>
           <div>Rating: {rating} </div>
-          <div>flavor Notes: {flavornotes} </div>
+          <div>flavor Notes: {flavor_notes} </div>
           {/* <div>Date: {new Date(date).toDateString()}</div> */}
         </div>
         <Button variant="primary" onClick={() => navigate.push(`/edit/${id}`)}>Edit</Button>{' '}

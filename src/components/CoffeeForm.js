@@ -4,12 +4,12 @@ import { v4 as uuidv4 } from 'uuid';
 
 const CoffeeForm = (props) => {
   const [Coffee, setCoffee ] = useState({
-    coffeename: props.coffee ? props.coffee.coffeename : '',
+    coffee_name: props.coffee ? props.coffee.coffee_name : '',
     rating: props.coffee ? props.coffee.rating : '',
     // brand: props.coffee ? props.coffee.brand : '',
     // rating: props.coffee ? props.coffee.rating : '',
     // roastery: props.coffee ? props.coffee.roastery : '',
-    flavornotes: props.coffee ? props.coffee.flavornotes : '',
+    flavor_notes: props.coffee ? props.coffee.flavor_notes : '',
     date: props.coffee ? props.coffee.date : ''
   });
 
