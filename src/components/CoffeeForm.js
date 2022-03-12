@@ -27,13 +27,14 @@ const CoffeeForm = (props) => {
     });
 
     if (allFieldsFilled) {
-      const Coffee = {
-        id: uuidv4(),
-        coffee_name,
-        rating,
-        flavor_notes,
-        date: new Date()
-      };
+      // const Coffee = {
+      //   id: uuidv4(),
+      //   coffee_name,
+      //   rating,
+      //   flavor_notes,
+      //   date: new Date()
+      // };
+      console.log(Coffee)
       props.handleOnSubmit(Coffee);
     } else {
       errorMsg = 'Please fill out all the fields.';
