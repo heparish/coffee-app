@@ -78,7 +78,7 @@ const CoffeeForm = (props) => {
           <Form.Control
             className="input-control"
             type="text"
-            name="coffeename"
+            name="coffee_name"
             value={coffee_name}
             placeholder="Enter name of coffee"
             onChange={handleInputChange}
@@ -122,7 +122,7 @@ const CoffeeForm = (props) => {
           <Form.Control
             className="input-control"
             type="text"
-            name="flavornotes"
+            name="flavor_notes"
             value={flavor_notes}
             placeholder="Enter available rating"
             onChange={handleInputChange}

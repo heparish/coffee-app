@@ -9,7 +9,27 @@ const AddCoffee = ({  }) => {
   const { coffees, setCoffee } = useContext(CoffeeContext);
   const handleOnSubmit = (coffee) => {
     setCoffee([coffee, ...coffees]);
-    // navigate.push('/');
+
+    // console.log(coffee)
+    fetch(
+        'http://localhost:5000//write-journal',
+        {
+          method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+          body: JSON.stringify(coffee),
+        }
+    )
+        .then((res) => res.json())
+        .then((result) => {
+          console.log(result);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+
     navigate("/");
   };
 
