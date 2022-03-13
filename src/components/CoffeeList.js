@@ -4,8 +4,10 @@ import Coffee from './Coffee';
 import CoffeeContext from '../context/CoffeeContext';
 
 const CoffeeList = () => {
-  const {coffees, setCoffee} = useContext(CoffeeContext);
+  // const {coffees, setCoffee} = useContext(CoffeeContext);
   const [coffeess, setCoffeess] = useState([]);
+
+
 
   const handleRemoveCoffee = (id) => {
     setCoffee(coffees.filter((coffee) => coffee.id !== id));
@@ -23,7 +25,7 @@ const CoffeeList = () => {
         .then(res => res.json())
         .then(
             (result) => {
-              handleRemoveCoffee(result);
+              console.log(result);
             },
             (error) => {
               console.log(error);
@@ -31,7 +33,11 @@ const CoffeeList = () => {
         )
   };
 
+
+
   useEffect(() => {
+    // let componentMounted = false;
+
     fetch('http://localhost:5000/read-journal')
         .then(res => res.json())
         .then(
@@ -43,8 +49,8 @@ const CoffeeList = () => {
             }
         )
     
-      }, []
-  )
+      }, [coffeess]
+  );
 
   return (
     <React.Fragment>
